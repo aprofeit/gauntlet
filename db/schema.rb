@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20130509025954) do
   create_table "people", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
+    t.date     "hire_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
