@@ -1,19 +1,11 @@
 <h1>Objectives</h1>
 
-<table class='table'>
-  <thead>
-    <tr>
-      <th>Title</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @objectives.each do |objective| %>
-    <tr>
-      <td><%= objective.title %></td>
-    </tr>
+<ul id='objectives' data-update-url='<%= sort_objectives_url %>'>
+  <% @objectives.each do |objective| %>
+    <%= content_tag_for :li, objective do %>
+      <%= objective.title %>
     <% end %>
-  </tbody>
-</table>
+  <% end %>
+</ul>
 
 <%= link_to "New Objective", new_objective_path, role: 'button', class: 'btn btn-primary', 'data-toggle' => 'modal', 'data-target' => '#modal-form' %>

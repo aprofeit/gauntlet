@@ -1,6 +1,6 @@
 class ObjectivesController < ApplicationController
   def index
-    @objectives = Objective.all
+    @objectives = Objective.order('position')
   end
 
   def new
@@ -13,6 +13,12 @@ class ObjectivesController < ApplicationController
     @objective = Objective.create(objective_params)
 
     redirect_to :back
+  end
+
+  def sort
+    params[:objective].each_with_index { |id, index| Objective.where(id: id).update_all(position: index + 1) }
+
+    render nothing: true
   end
 
   private
