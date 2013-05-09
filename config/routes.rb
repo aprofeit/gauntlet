@@ -1,5 +1,5 @@
 Gauntlet::Application.routes.draw do
-  root 'people#index'
+  root to: redirect('/people')
 
   get '/login', to: 'sessions#new', as: :login
   post '/auth/:provider/callback', to: 'sessions#create'

@@ -8,16 +8,21 @@
 </head>
 <body>
 
-<%= link_to "People", people_path %>
-<%= link_to "Objectives", objectives_path %>
-
 <div id="modal-form" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
   <div class="modal-body">
-
   </div>
 </div>
 
-<%= yield %>
+<div class='container'>
+  <div class="masthead">
+    <ul class="nav nav-pills pull-right">
+      <%= nav_link("People", people_path) %>
+      <%= nav_link("Objectives", objectives_path) %>
+    </ul>
+    <h3 class="muted">Gauntlet</h3>
+  </div>
+  <%= yield %>
+</diV>
 
 </body>
 </html>
