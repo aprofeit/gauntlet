@@ -1,2 +1,19 @@
 <h1>Objectives</h1>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th>Title</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @objectives.each do |objective| %>
+    <tr>
+      <td><%= objective.title %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <%= link_to "New Objective", new_objective_path, role: 'button', class: 'btn btn-primary', 'data-toggle' => 'modal', 'data-target' => '#modal-form' %>

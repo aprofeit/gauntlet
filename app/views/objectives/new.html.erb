@@ -3,11 +3,13 @@
   <h3 id="modalLabel">New Objective</h3>
 </div>
 
-<div class="modal-inner-body">
-  <p>One fine body…</p>
-</div>
+<%= form_for @objective do |f| %>
+  <div class="modal-inner-body">
+    <%= f.text_field :title, placeholder: 'Title' %>
+  </div>
 
-<div class="modal-footer">
-  <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-  <button class="btn btn-primary">Save changes</button>
-</div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <%= f.submit nil, class: 'btn btn-primary' %>
+  </div>
+<% end %>

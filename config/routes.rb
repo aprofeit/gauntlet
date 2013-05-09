@@ -6,5 +6,5 @@ Gauntlet::Application.routes.draw do
   get '/auth/failure', to: 'sessions#failure'
 
   resources :people, only: [:index]
-  resources :objectives, only: [:index, :new]
+  resources :objectives, only: [:index, :new, :create]
 end
