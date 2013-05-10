@@ -15,6 +15,12 @@ class ObjectivesController < ApplicationController
     redirect_to :back
   end
 
+  def destroy
+    Objective.find(params[:id]).destroy
+
+    redirect_to :back
+  end
+
   def sort
     params[:objective].each_with_index { |id, index| Objective.where(id: id).update_all(position: index + 1) }
 

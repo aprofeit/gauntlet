@@ -1,21 +1,29 @@
-<div class='page-header'>
-  <h1>People</h1>
-</div>
+<h1>People</h1>
 
 <ul id='people'>
   <% @people.each do |person| %>
-  <div class='row'>
-    <li>
-      <div class='name-container span3'>
-        <h3><%= person.name %></h3>
-        <span class='muted'><%= person.hire_date.strftime('%B %-d, %Y') %></span>
+    <%= content_tag_for :li, person do %>
+      <div class='row'>
+        <div class='name-container span12'>
+          <h3>
+            <%= person.name %> <small class='muted'><%= person.hire_date.strftime('%B %-d, %Y') %></small>
+            <%= link_to content_tag(:i, nil, class: 'icon-trash', style: 'display: none'), person, method: :delete %>
+          </h3>
+        </div>
       </div>
 
-      <div class='span9'>
-        yo
+      <div class='row'>
+        <div class='span12'>
+          <div class='progress'>
+            <% sorted_by_child_position(person.todos).each_with_index do |todo, i| %>
+              <%= content_tag_for :div, todo, class: "bar", style: "width: #{100.0 / person.todos.size}%" do %>
+                <%= todo.objective.title %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
       </div>
-    </li>
-  </div>
+    <% end %>
   <% end %>
 </ul>
 

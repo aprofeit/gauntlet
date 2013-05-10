@@ -1,11 +1,9 @@
-<div class='page-header'>
-  <h1>Objectives</h1>
-</div>
+<h1>Objectives</h1>
 
 <ul id='objectives' data-update-url='<%= sort_objectives_url %>'>
   <% @objectives.each do |objective| %>
     <%= content_tag_for :li, objective do %>
-      <%= objective.title %>
+      <%= objective.title %> <%= link_to content_tag(:i, nil, class: 'icon-trash', style: 'display: none'), objective, method: :delete %>
     <% end %>
   <% end %>
 </ul>

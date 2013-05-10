@@ -1,6 +1,6 @@
 class PeopleController < ApplicationController
   def index
-    @people = Person.all
+    @people = Person.includes(todos: :objective).all
   end
 
   def new
@@ -11,6 +11,12 @@ class PeopleController < ApplicationController
 
   def create
     @person = Person.create(person_params)
+
+    redirect_to :back
+  end
+
+  def destroy
+    Person.find(params[:id]).destroy
 
     redirect_to :back
   end

@@ -12,7 +12,6 @@
  *= require_tree .
  */
 
-/* Modal */
 #modal-form .modal-body { padding: 0px !important; }
 #modal-form .modal-inner-body { padding: 15px; }
 #modal-form form { margin: 0; }
@@ -21,5 +20,14 @@
 
 ul { list-style-type: none; margin: 30px 0 !important; }
 
-.name-container { margin-bottom: 10px; }
+.name-container { margin-bottom: 5px; }
 .name-container h3 { margin: 0; line-height: 1em; }
+
+.objective a:hover { text-decoration: none; }
+.objective { margin-bottom: 0.5em; }
+.objective i { position: relative; top: 1px; color: gray; }
+.objective i:hover { color: red; }
+
+.person i { font-size: 0.5em; color: gray; }
+.person i:hover { color: red; }
+.person a:hover { text-decoration: none; }

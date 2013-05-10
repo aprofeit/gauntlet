@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130509214633) do
+ActiveRecord::Schema.define(version: 20130510021311) do
 
   create_table "objectives", force: true do |t|
     t.string   "title"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20130509214633) do
     t.integer  "person_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "complete",     default: false
   end
 
   add_index "todos", ["objective_id"], name: "index_todos_on_objective_id"
