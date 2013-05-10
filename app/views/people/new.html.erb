@@ -1,0 +1,17 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+  <h3 id="modalLabel">New Person</h3>
+</div>
+
+<%= form_for @person do |f| %>
+  <div class="modal-inner-body">
+    <%= f.text_field :first_name, placeholder: 'First', autocomplete: 'off' %>
+    <%= f.text_field :last_name, placeholder: 'Last', autocomplete: 'off' %>
+    <%= f.text_field :hire_date, class: 'datepicker', placeholder: 'Hire date', 'data-date-format' => "yyyy.mm.dd" %>
+  </div>
+
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <%= f.submit nil, class: 'btn btn-primary' %>
+  </div>
+<% end %>

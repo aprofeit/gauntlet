@@ -12,7 +12,14 @@
  *= require_tree .
  */
 
+/* Modal */
 #modal-form .modal-body { padding: 0px !important; }
 #modal-form .modal-inner-body { padding: 15px; }
 #modal-form form { margin: 0; }
 #modal-form input[type=text] { width: 510px; }
+.dropdown-menu { z-index: 1200 !important; }
+
+ul { list-style-type: none; margin: 30px 0 !important; }
+
+.name-container { margin-bottom: 10px; }
+.name-container h3 { margin: 0; line-height: 1em; }

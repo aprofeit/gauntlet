@@ -5,7 +5,7 @@ Gauntlet::Application.routes.draw do
   post '/auth/:provider/callback', to: 'sessions#create'
   get '/auth/failure', to: 'sessions#failure'
 
-  resources :people, only: [:index]
+  resources :people, only: [:index, :new, :create]
   resources :objectives, only: [:index, :new, :create] do
     post :sort, on: :collection
   end

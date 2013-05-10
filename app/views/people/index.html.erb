@@ -1,1 +1,22 @@
-<h1>People</h1>
+<div class='page-header'>
+  <h1>People</h1>
+</div>
+
+<ul id='people'>
+  <% @people.each do |person| %>
+  <div class='row'>
+    <li>
+      <div class='name-container span3'>
+        <h3><%= person.name %></h3>
+        <span class='muted'><%= person.hire_date.strftime('%B %-d, %Y') %></span>
+      </div>
+
+      <div class='span9'>
+        yo
+      </div>
+    </li>
+  </div>
+  <% end %>
+</ul>
+
+<%= link_to "New Person", new_person_path, role: 'button', class: 'btn btn-primary', 'data-toggle' => 'modal', 'data-target' => '#modal-form' %>
