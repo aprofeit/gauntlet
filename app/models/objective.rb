@@ -3,7 +3,7 @@ class Objective < ActiveRecord::Base
   has_many :people, through: :todos
 
   before_validation :set_position
-  before_create :add_todo_to_people
+  before_create :build_todos
 
   private
 

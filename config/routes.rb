@@ -6,6 +6,10 @@ Gauntlet::Application.routes.draw do
   get '/auth/failure', to: 'sessions#failure'
 
   resources :people, only: [:index, :new, :create, :destroy]
+  resources :todos, only: [:show] do
+    post 'complete', on: :member
+    delete 'complete' => 'todos#uncomplete', as: :uncomplete, on: :member
+  end
   resources :objectives, only: [:index, :new, :create, :destroy] do
     post :sort, on: :collection
   end

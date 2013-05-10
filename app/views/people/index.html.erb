@@ -16,7 +16,7 @@
         <div class='span12'>
           <div class='progress'>
             <% sorted_by_child_position(person.todos).each_with_index do |todo, i| %>
-              <%= content_tag_for :div, todo, class: "bar", style: "width: #{100.0 / person.todos.size}%" do %>
+              <%= content_tag_for :div, todo, title: "#{todo.completed_at_in_words if todo.completed_at}", class: "bar #{bar_style(todo)}", style: "width: #{100.0 / person.todos.size}%", 'data-complete-url' => complete_todo_url(todo), 'data-complete' => todo.complete do %>
                 <%= todo.objective.title %>
               <% end %>
             <% end %>

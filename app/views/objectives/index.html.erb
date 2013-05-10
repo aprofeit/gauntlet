@@ -3,9 +3,10 @@
 <ul id='objectives' data-update-url='<%= sort_objectives_url %>'>
   <% @objectives.each do |objective| %>
     <%= content_tag_for :li, objective do %>
-      <%= objective.title %> <%= link_to content_tag(:i, nil, class: 'icon-trash', style: 'display: none'), objective, method: :delete %>
+      <span class='objective-title'><%= objective.title %></span> <%= link_to content_tag(:i, nil, class: 'icon-trash', style: 'display: none'), objective, method: :delete %>
     <% end %>
   <% end %>
 </ul>
 
 <%= link_to "New Objective", new_objective_path, role: 'button', class: 'btn btn-primary', 'data-toggle' => 'modal', 'data-target' => '#modal-form' %>
+
