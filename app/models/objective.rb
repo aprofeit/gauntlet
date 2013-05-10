@@ -1,4 +1,6 @@
 class Objective < ActiveRecord::Base
+  validates :title, presence: true
+
   has_many :todos, dependent: :delete_all
   has_many :people, through: :todos
 

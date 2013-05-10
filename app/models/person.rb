@@ -1,4 +1,6 @@
 class Person < ActiveRecord::Base
+  validates :first_name, :last_name, :hire_date, presence: true
+
   has_many :todos, dependent: :delete_all
   has_many :objectives, through: :todos
 
