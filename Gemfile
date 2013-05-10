@@ -19,3 +19,7 @@ gem 'twitter-bootstrap-rails'
 group :development do
   gem 'quiet_assets'
 end
+
+group :production do
+  gem 'pg'
+end
