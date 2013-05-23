@@ -1,0 +1,11 @@
+<%= content_tag_for :li, objective do %>
+  <h3>
+    <%= objective.title %>
+    <%= link_to content_tag(:i, nil, class: 'icon-trash', style: 'display: none'), objective, method: :delete, 'data-confirm' => "Are you sure you want to delete this objective? There is no undo and this will remove this objective from all current people." %>
+  </h3>
+
+  <h6 class='muted'>Completed by <%= percent_complete(objective.todos) %>% of people</h6>
+  <p>
+    <%= objective.todos.completed.map(&:person).map(&:name).join(', ') %>
+  </p>
+<% end %>

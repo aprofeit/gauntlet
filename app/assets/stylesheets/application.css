@@ -27,9 +27,13 @@ ul { list-style-type: none; margin: 30px 0 !important; }
 .name-container h3 { margin: 0; line-height: 1em; }
 
 .objective a:hover { text-decoration: none; }
-.objective { margin-bottom: 0.5em; }
-.objective i { position: relative; top: 1px; color: gray; }
-.objective span.objective-title { cursor: move; }
+.objective i { color: gray; font-size: 0.6em; }
+.objective { cursor: move; }
+.objective h3 { margin-bottom: 0 !important; }
+.objective h6 { display: inline; }
+.objective p { display: inline; font-size: 12px; }
+
+#hire-dates ul.unstyled { margin: 16px 0 !important; padding: 0 !important; }
 
 .person small { margin-right: 3px; }
 .person i { font-size: 0.5em; color: gray; width: 1em !important; }

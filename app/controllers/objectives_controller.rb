@@ -1,6 +1,7 @@
 class ObjectivesController < ApplicationController
   def index
-    @objectives = Objective.order('position')
+    @objectives = Objective.includes(todos: :person).order('position')
+    @people = Person.all
   end
 
   def new

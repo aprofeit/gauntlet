@@ -1,4 +1,5 @@
 Gauntlet::Application.routes.draw do
+  get "overview/index"
   root to: redirect('/people')
 
   get '/login', to: 'sessions#new', as: :login

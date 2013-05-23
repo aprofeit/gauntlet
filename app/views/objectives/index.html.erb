@@ -1,12 +1,27 @@
-<h1>Objectives</h1>
+<h1>Overview</h1>
+
+<%= link_to "New Objective", new_objective_path, role: 'button', class: 'btn btn-primary pull-right', 'data-toggle' => 'modal', 'data-target' => '#modal-form' %>
 
 <ul id='objectives' data-update-url='<%= sort_objectives_url %>'>
-  <% @objectives.each do |objective| %>
-    <%= content_tag_for :li, objective do %>
-      <span class='objective-title'><%= objective.title %></span> <%= link_to content_tag(:i, nil, class: 'icon-trash', style: 'display: none'), objective, method: :delete %>
-    <% end %>
-  <% end %>
+  <%= render @objectives %>
 </ul>
 
-<%= link_to "New Objective", new_objective_path, role: 'button', class: 'btn btn-primary', 'data-toggle' => 'modal', 'data-target' => '#modal-form' %>
+<div id='hire-dates'>
+  <% @people.group_by { |person| person.hire_date }.each do |hire_date, people| %>
+    <div class='row'>
+      <div class='span2'>
+        <h3><%= hire_date %></h3>
+      </div>
 
+      <div class='span10'>
+        <ul class='unstyled'>
+          <% people.each do |person| %>
+            <li>
+              <%= person.name %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+</div>

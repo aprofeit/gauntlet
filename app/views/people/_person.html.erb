@@ -1,0 +1,23 @@
+<%= content_tag_for :li, person do %>
+  <div class='row'>
+    <div class='name-container span12'>
+      <h3>
+        <%= person.name %> <small class='muted'><%= person.hire_date.strftime('%B %-d, %Y') %></small>
+        <%= link_to content_tag(:i, nil, class: 'icon-edit', style: 'display: none'), [:edit, person], 'data-toggle' => 'modal', 'data-target' => '#modal-form' %>
+        <%= link_to content_tag(:i, nil, class: 'icon-trash', style: 'display: none'), person, method: :delete, 'data-confirm' => "Are you sure you want to delete #{person.name}? There's no undo!" %>
+      </h3>
+    </div>
+  </div>
+
+  <div class='row'>
+    <div class='span12'>
+      <div class='progress'>
+        <% sorted_by_child_position(person.todos).each_with_index do |todo, i| %>
+          <%= content_tag_for :div, todo, title: "#{todo.completed_at_in_words if todo.completed_at}", class: "bar #{bar_style(todo)}", style: "width: #{100.0 / person.todos.size}%", 'data-todo-url' => todo_url(todo), 'data-complete-url' => complete_todo_url(todo), 'data-complete' => todo.complete do %>
+            <%= todo.objective.title %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

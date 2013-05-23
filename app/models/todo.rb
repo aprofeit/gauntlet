@@ -4,6 +4,8 @@ class Todo < ActiveRecord::Base
 
   before_save :set_completed_at
 
+  scope :completed, -> { where(complete: true) }
+
   def completed_at_in_words
     completed_at.strftime('Completed on %b %-d at %-l:%M %P') if complete?
   end
