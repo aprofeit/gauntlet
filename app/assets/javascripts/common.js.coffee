@@ -4,18 +4,11 @@ $ ->
       .on 'changeDate', ->
         $(this).datepicker('hide')
 
-  $('.objective').hover(
+  $('.objective, .person').hover(
     ->
-      $(this).children('a').children('i').show()
+      $(this).find('i').show()
     ->
-      $(this).children('a').children('i').hide()
-  )
-
-  $('.person').hover(
-    ->
-      $(this).children('.row').children('.name-container').children('h3').children('a').children('i').show()
-    ->
-      $(this).children('.row').children('.name-container').children('h3').children('a').children('i').hide()
+      $(this).find('i').hide()
   )
 
   $('#modal-form').on 'hidden', ->

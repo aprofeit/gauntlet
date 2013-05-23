@@ -12,6 +12,9 @@
  *= require_tree .
  */
 
+i.icon-edit:hover { color: blue; }
+i.icon-trash:hover { color: red; }
+
 #modal-form .modal-body { padding: 0px !important; }
 #modal-form .modal-inner-body { padding: 15px; }
 #modal-form form { margin: 0; }
@@ -26,12 +29,10 @@ ul { list-style-type: none; margin: 30px 0 !important; }
 .objective a:hover { text-decoration: none; }
 .objective { margin-bottom: 0.5em; }
 .objective i { position: relative; top: 1px; color: gray; }
-.objective i:hover { color: red; }
 .objective span.objective-title { cursor: move; }
 
-.person i { font-size: 0.5em; color: gray; }
-.person i.icon-edit:hover { color: blue; }
-.person i.icon-trash:hover { color: red; }
+.person small { margin-right: 3px; }
+.person i { font-size: 0.5em; color: gray; width: 1em !important; }
 .person a:hover { text-decoration: none; }
 
 .todo { cursor: pointer; }
