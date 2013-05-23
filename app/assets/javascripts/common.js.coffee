@@ -17,3 +17,6 @@ $ ->
     ->
       $(this).children('.row').children('.name-container').children('h3').children('a').children('i').hide()
   )
+
+  $('#modal-form').on 'hidden', ->
+    $(this).removeData 'modal'

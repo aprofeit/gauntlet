@@ -30,7 +30,8 @@ ul { list-style-type: none; margin: 30px 0 !important; }
 .objective span.objective-title { cursor: move; }
 
 .person i { font-size: 0.5em; color: gray; }
-.person i:hover { color: red; }
+.person i.icon-edit:hover { color: blue; }
+.person i.icon-trash:hover { color: red; }
 .person a:hover { text-decoration: none; }
 
 .todo { cursor: pointer; }

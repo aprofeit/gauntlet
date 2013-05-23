@@ -1,4 +1,6 @@
 class PeopleController < ApplicationController
+  before_filter :load_person, only: [:edit, :update, :destroy]
+
   def index
     @people = Person.includes(todos: :objective).all
   end
@@ -9,6 +11,16 @@ class PeopleController < ApplicationController
     render layout: false
   end
 
+  def edit
+    render layout: false
+  end
+
+  def update
+    @person.update_attributes(person_params)
+
+    redirect_to :back
+  end
+
   def create
     @person = Person.create(person_params)
 
@@ -16,7 +28,7 @@ class PeopleController < ApplicationController
   end
 
   def destroy
-    Person.find(params[:id]).destroy
+    @person.destroy
 
     redirect_to :back
   end
@@ -25,5 +37,9 @@ class PeopleController < ApplicationController
 
   def person_params
     params.require(:person).permit(:first_name, :last_name, :hire_date)
+  end
+
+  def load_person
+    @person = Person.find(params[:id])
   end
 end

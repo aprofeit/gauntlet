@@ -5,7 +5,7 @@ Gauntlet::Application.routes.draw do
   post '/auth/:provider/callback', to: 'sessions#create'
   get '/auth/failure', to: 'sessions#failure'
 
-  resources :people, only: [:index, :new, :create, :destroy]
+  resources :people, except: :show
   resources :todos, only: [:show] do
     post 'complete', on: :member
     delete 'complete' => 'todos#uncomplete', as: :uncomplete, on: :member
