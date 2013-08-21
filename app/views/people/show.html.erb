@@ -1,0 +1,7 @@
+<h1><%= @person.name %></h1>
+
+<ul class='unstyled'>
+  <% @person.questions.each do |question| %>
+    <li><%= question.body %></li>
+  <% end %>
+</ul>

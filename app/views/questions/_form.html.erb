@@ -1,0 +1,11 @@
+<%= form_for @question do |f| %>
+  <div class="modal-inner-body">
+    <%= f.text_area :body %>
+    <%= f.text_field :position %>
+  </div>
+
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <%= f.submit nil, class: 'btn btn-primary' %>
+  </div>
+<% end %>

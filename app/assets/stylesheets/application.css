@@ -19,9 +19,12 @@ i.icon-trash:hover { color: red; }
 #modal-form .modal-inner-body { padding: 15px; }
 #modal-form form { margin: 0; }
 #modal-form input[type=text] { width: 510px; }
+#modal-form textarea { width: 510px; height: 200px; }
 .dropdown-menu { z-index: 1200 !important; }
 
 ul { list-style-type: none; margin: 30px 0 !important; }
+ol { margin: 30px 0 !important; }
+ol li { margin-top: 30px; }
 
 .name-container { margin-bottom: 5px; }
 .name-container h3 { margin: 0; line-height: 1em; }

@@ -1,4 +1,6 @@
 Gauntlet::Application.routes.draw do
+  get "questions/index"
+  get "questions/new"
   get "overview/index"
   root to: redirect('/people')
 
@@ -6,7 +8,8 @@ Gauntlet::Application.routes.draw do
   post '/auth/:provider/callback', to: 'sessions#create'
   get '/auth/failure', to: 'sessions#failure'
 
-  resources :people, except: :show
+  resources :people
+  resources :questions, only: [:index, :new, :create]
   resources :todos, only: :show do
     post 'complete', on: :member
     delete 'complete' => 'todos#uncomplete', as: :uncomplete, on: :member

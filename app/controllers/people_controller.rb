@@ -5,6 +5,10 @@ class PeopleController < ApplicationController
     @people = Person.includes(todos: :objective).order('hire_date asc')
   end
 
+  def show
+    @person = Person.includes(:questions).find(params[:id])
+  end
+
   def new
     @person = Person.new
 

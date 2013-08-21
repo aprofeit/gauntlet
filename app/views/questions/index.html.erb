@@ -1,0 +1,9 @@
+<h1>Questions</h1>
+
+<%= link_to "New Question", new_question_path, role: 'button', class: 'btn btn-primary pull-right', 'data-toggle' => 'modal', 'data-target' => '#modal-form' %>
+
+<ol>
+  <% @questions.each do |question| %>
+    <li><%= simple_format question.body %></li>
+  <% end %>
+</ol>
