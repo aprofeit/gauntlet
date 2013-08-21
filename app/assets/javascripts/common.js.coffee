@@ -10,10 +10,10 @@ hide_child_element = (parent_selector, child_selector) ->
 clear_modal = (selector) ->
   $(selector).removeData 'modal'
 
-$(document).on 'page:fetch', ->
+$(document).on 'page:fetch ajaxStart', ->
   NProgress.start()
 
-$(document).on 'page:load', ->
+$(document).on 'page:load ajaxComplete', ->
   NProgress.done()
 
 $(document).on 'mouseenter', '.objective, .person', ->
