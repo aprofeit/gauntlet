@@ -2,7 +2,7 @@ class PeopleController < ApplicationController
   before_filter :load_person, only: [:edit, :update, :destroy]
 
   def index
-    @people = Person.includes(todos: :objective).all
+    @people = Person.includes(todos: :objective).order('hire_date asc')
   end
 
   def new
