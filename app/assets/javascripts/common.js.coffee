@@ -10,15 +10,11 @@ hide_child_element = (parent_selector, child_selector) ->
 clear_modal = (selector) ->
   $(selector).removeData 'modal'
 
-enable_tooltip_on_element = (selector) ->
-  $(selector).tooltip()
-
 $(document).on 'page:fetch', ->
   NProgress.start()
 
 $(document).on 'page:load', ->
   NProgress.done()
-  enable_tooltip_on_element('.bar')
 
 $(document).on 'mouseenter', '.objective, .person', ->
   show_child_element(this, 'i')

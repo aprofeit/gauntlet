@@ -33,6 +33,12 @@ attach_hide_datepicker_event = ->
 init_datepicker = ->
   $('.datepicker').datepicker()
 
+enable_tooltip_on_element = (selector) ->
+  $(selector).tooltip()
+
+$(document).on 'page:load', ->
+  enable_tooltip_on_element('.bar')
+
 $(document).on 'click', '.todo', ->
   $todo = $(this)
   if todo_complete($todo)
