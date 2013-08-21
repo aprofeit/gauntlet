@@ -8,7 +8,7 @@
       <div class='row'>
         <div class='name-container span12'>
           <h3>
-            <%= link_to person.name, person %> <small class='muted'><%= person.hire_date.strftime('%B %-d, %Y') %></small>
+            <%= person.name %> <small class='muted'><%= person.hire_date.strftime('%B %-d, %Y') %></small>
             <%= link_to content_tag(:i, nil, class: 'icon-edit', style: 'display: none'), [:edit, person], 'data-toggle' => 'modal', 'data-target' => '#modal-form' %>
             <%= link_to content_tag(:i, nil, class: 'icon-trash', style: 'display: none'), person, method: :delete, 'data-confirm' => "Are you sure you want to delete #{person.name}? There's no undo!" %>
           </h3>
