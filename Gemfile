@@ -4,6 +4,7 @@ ruby "2.0.0"
 gem 'rails', '4.0.0.rc1'
 gem 'thin'
 gem 'jbuilder', '~> 1.0.1'
+gem 'newrelic_rpm'
 
 gem 'sass-rails', '~> 4.0.0.rc1'
 gem 'uglifier', '>= 1.3.0'
