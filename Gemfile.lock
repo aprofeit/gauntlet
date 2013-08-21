@@ -55,6 +55,7 @@ GEM
     mime-types (1.23)
     minitest (4.7.4)
     multi_json (1.7.3)
+    newrelic_rpm (3.6.6.147)
     omniauth (1.1.1)
       hashie (~> 1.2)
       rack
@@ -142,6 +143,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.0.1)
   jquery-rails
+  newrelic_rpm
   omniauth (= 1.1.1)
   omniauth-google-apps
   pg
