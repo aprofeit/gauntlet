@@ -13,7 +13,11 @@ clear_modal = (selector) ->
 $(document).on 'page:fetch ajaxStart', ->
   NProgress.start()
 
-$(document).on 'page:receive ajaxComplete', ->
+$(document).on 'page:load ajaxComplete', ->
+  NProgress.done()
+
+$(document).on 'page:restore', ->
+  NProgress.set(0.7)
   NProgress.done()
 
 $(document).on 'mouseenter', '.objective, .person', ->
