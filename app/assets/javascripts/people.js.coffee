@@ -26,6 +26,12 @@ enable_tooltip_on_todo = (todo, data) ->
 todo_complete = (todo) ->
   todo.data('complete')
 
+attach_hide_datepicker_event = ->
+  $('.datepicker').on 'changeDate', ->
+    $(this).datepicker('hide')
+
+init_datepicker = ->
+  $('.datepicker').datepicker()
 
 $(document).on 'click', '.todo', ->
   $todo = $(this)
@@ -33,3 +39,7 @@ $(document).on 'click', '.todo', ->
     send_uncomplete_request_for_todo($todo)
   else
     send_complete_request_for_todo($todo)
+
+$(document).on 'shown', '#modal-form', ->
+  init_datepicker()
+  attach_hide_datepicker_event()
