@@ -17,8 +17,7 @@ $(document).on 'page:load ajaxComplete', ->
   NProgress.done()
 
 $(document).on 'page:restore', ->
-  NProgress.set(0.7)
-  NProgress.done()
+  NProgress.remove()
 
 $(document).on 'mouseenter', '.objective, .person', ->
   show_child_element(this, 'i')

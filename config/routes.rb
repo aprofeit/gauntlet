@@ -14,4 +14,6 @@ Gauntlet::Application.routes.draw do
   resources :objectives, only: [:index, :new, :create, :destroy] do
     post :sort, on: :collection
   end
+
+  get '/ping' => 'ping#ping'
 end
